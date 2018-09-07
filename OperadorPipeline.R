@@ -12,7 +12,7 @@ starwars %>%
 # Anidando funciones
 count(filter(starwars,hair_color == "black",eye_color == "brown"))
 
-# Usando operador pipeline
+# Usando operador pipeline `%>%`
 starwars %>%
   filter ((hair_color == "black"),(eye_color == "brown")) %>%
   count()
@@ -22,10 +22,10 @@ starwars %>%
 library(babynames)
 library(dplyr)
 
-# Count how many young boys with the name "Taylor" are born
+# Cuantas nenas con el nombre Victoria existen en el dataset
 sum(select(filter(babynames,sex=="M",name=="Victoria"),n))
 
-# Do the same but now with `%>%`
+# Usando operador pipeline `%>%`
 babynames%>%
   filter(sex=="F")%>%
   filter(name=="Victoria")%>%
